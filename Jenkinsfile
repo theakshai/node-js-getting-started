@@ -26,14 +26,6 @@ pipeline {
                   }
               }
           }
-          stage('Removing Docker Images from local'){
-              steps{
-                 script {
-            echo "Removing Docker Images"
-            sh "docker rmi --force \$(docker images -q)"
-        }
-                }
-            }
 
     }
 }
