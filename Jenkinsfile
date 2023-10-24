@@ -29,11 +29,6 @@ pipeline {
           stage('Removing Docker Images from local'){
               steps{
                  script {
-            echo "Removing Docker Containers"
-            def containerIds = sh(script: 'docker ps -q', returnStdout: true).trim().split('\n')
-            for (def containerId in containerIds) {
-                sh "docker rm -f $containerId"
-            }
             echo "Removing Docker Images"
             sh "docker rmi --force \$(docker images -q)"
         }
