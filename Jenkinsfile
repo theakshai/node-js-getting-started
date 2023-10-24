@@ -30,9 +30,9 @@ pipeline {
               steps{
                   script{
                         echo "Removing Docker Containers"
-                        sh "docker rm -f $(docker ps -q)"
+                        sh "docker rm -f \$(docker ps -q)"
                         echo "Removing Docker Images"
-                        sh "docker rmi --force $(docker images -q)"
+                        sh "docker rmi --force \$(docker images -q)"
 
                     }
                 }
